@@ -1,0 +1,279 @@
+{
+  "messages": [
+    {
+      "message_id": "north-a-1@bench.example",
+      "noise": false,
+      "chain": "northquay"
+    },
+    {
+      "message_id": "north-a-2@bench.example",
+      "noise": false,
+      "chain": "northquay"
+    },
+    {
+      "message_id": "north-a-3@bench.example",
+      "noise": false,
+      "chain": "northquay"
+    },
+    {
+      "message_id": "north-a-4@bench.example",
+      "noise": false,
+      "chain": "northquay"
+    },
+    {
+      "message_id": "north-b-1@bench.example",
+      "noise": false,
+      "chain": "northquay"
+    },
+    {
+      "message_id": "north-b-2@bench.example",
+      "noise": false,
+      "chain": "northquay"
+    },
+    {
+      "message_id": "north-b-3@bench.example",
+      "noise": false,
+      "chain": "northquay"
+    },
+    {
+      "message_id": "northquay-8@bench.example",
+      "noise": false,
+      "chain": "northquay"
+    },
+    {
+      "message_id": "birch-1@bench.example",
+      "noise": false,
+      "chain": "birchkiln"
+    },
+    {
+      "message_id": "birch-2@bench.example",
+      "noise": false,
+      "chain": "birchkiln"
+    },
+    {
+      "message_id": "birch-3@bench.example",
+      "noise": false,
+      "chain": "birchkiln"
+    },
+    {
+      "message_id": "birch-4@bench.example",
+      "noise": false,
+      "chain": "birchkiln"
+    },
+    {
+      "message_id": "birch-5@bench.example",
+      "noise": false,
+      "chain": "birchkiln"
+    },
+    {
+      "message_id": "birch-6@bench.example",
+      "noise": false,
+      "chain": "birchkiln"
+    },
+    {
+      "message_id": "colour-1@bench.example",
+      "noise": false,
+      "chain": "colourpass"
+    },
+    {
+      "message_id": "colour-2@bench.example",
+      "noise": false,
+      "chain": "colourpass"
+    },
+    {
+      "message_id": "colour-3@bench.example",
+      "noise": false,
+      "chain": "colourpass"
+    },
+    {
+      "message_id": "colour-4@bench.example",
+      "noise": false,
+      "chain": "colourpass"
+    },
+    {
+      "message_id": "colour-5@bench.example",
+      "noise": false,
+      "chain": "colourpass"
+    },
+    {
+      "message_id": "colour-6@bench.example",
+      "noise": false,
+      "chain": "colourpass"
+    },
+    {
+      "message_id": "lanyard-1@bench.example",
+      "noise": false,
+      "chain": "lanyard"
+    },
+    {
+      "message_id": "lanyard-2@bench.example",
+      "noise": false,
+      "chain": "lanyard"
+    },
+    {
+      "message_id": "dock-1@bench.example",
+      "noise": false,
+      "chain": "dock"
+    },
+    {
+      "message_id": "dock-2@bench.example",
+      "noise": false,
+      "chain": "dock"
+    },
+    {
+      "message_id": "dock-3@bench.example",
+      "noise": false,
+      "chain": "dock"
+    },
+    {
+      "message_id": "dock-4@bench.example",
+      "noise": false,
+      "chain": "dock"
+    },
+    {
+      "message_id": "dock-5@bench.example",
+      "noise": false,
+      "chain": "dock"
+    },
+    {
+      "message_id": "payroll-1@bench.example",
+      "noise": false,
+      "chain": "payroll"
+    },
+    {
+      "message_id": "payroll-2@bench.example",
+      "noise": false,
+      "chain": "payroll"
+    },
+    {
+      "message_id": "zebra-1@bench.example",
+      "noise": false,
+      "chain": "zebra"
+    },
+    {
+      "message_id": "zebra-2@bench.example",
+      "noise": false,
+      "chain": "zebra"
+    },
+    {
+      "message_id": "zebra-3@bench.example",
+      "noise": false,
+      "chain": "zebra"
+    },
+    {
+      "message_id": "radio-1@bench.example",
+      "noise": false,
+      "chain": "radio"
+    },
+    {
+      "message_id": "radio-2@bench.example",
+      "noise": false,
+      "chain": "radio"
+    },
+    {
+      "message_id": "radio-3@bench.example",
+      "noise": false,
+      "chain": "radio"
+    },
+    {
+      "message_id": "radio-4@bench.example",
+      "noise": false,
+      "chain": "radio"
+    },
+    {
+      "message_id": "radio-5@bench.example",
+      "noise": false,
+      "chain": "radio"
+    },
+    {
+      "message_id": "news-1@bench.example",
+      "noise": true,
+      "chain": null
+    },
+    {
+      "message_id": "cal-1@bench.example",
+      "noise": true,
+      "chain": null
+    },
+    {
+      "message_id": "receipt-1@bench.example",
+      "noise": true,
+      "chain": null
+    },
+    {
+      "message_id": "reminder-1@bench.example",
+      "noise": true,
+      "chain": null
+    },
+    {
+      "message_id": "note-1@bench.example",
+      "noise": true,
+      "chain": null
+    },
+    {
+      "message_id": "quick-1@bench.example",
+      "noise": true,
+      "chain": null
+    },
+    {
+      "message_id": "cal-accept-1@bench.example",
+      "noise": true,
+      "chain": null
+    },
+    {
+      "message_id": "receipt-2@bench.example",
+      "noise": true,
+      "chain": null
+    }
+  ],
+  "queries": [
+    {
+      "query": "update on Northquay",
+      "chains": [
+        "northquay"
+      ]
+    },
+    {
+      "query": "update on Birchkiln",
+      "chains": [
+        "birchkiln"
+      ]
+    },
+    {
+      "query": "my communications with Farah Colour",
+      "chains": [
+        "colourpass"
+      ]
+    },
+    {
+      "query": "handheld radio channel",
+      "chains": [
+        "radio"
+      ]
+    },
+    {
+      "query": "zebra docking fee",
+      "chains": [
+        "zebra"
+      ]
+    },
+    {
+      "query": "nylon badge reels",
+      "chains": [
+        "lanyard"
+      ]
+    },
+    {
+      "query": "pension form PF-204",
+      "chains": [
+        "payroll"
+      ]
+    },
+    {
+      "query": "fender inspection bollard",
+      "chains": [
+        "dock"
+      ]
+    }
+  ]
+}

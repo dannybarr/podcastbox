@@ -1,0 +1,134 @@
+# PodcastBox, fully local.
+#
+#   docker compose up
+#
+# The first launch downloads Qwen3, Kokoro, and Dia. That needs a network.
+# After the weights are on disk, the brief runs with the network off.
+# For the natural Dia voice on an NVIDIA GPU, also pass docker-compose.gpu.yml.
+# See the README.
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "127.0.0.1:11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+  ollama-init:
+    image: curlimages/curl:8.11.1
+    depends_on:
+      ollama:
+        condition: service_healthy
+    restart: "no"
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -eu
+        echo "Downloading qwen3:8b. This is several gigabytes the first time."
+        if ! curl --fail --show-error --retry 3 -N http://ollama:11434/api/pull -d '{"name":"qwen3:8b"}'; then
+          echo "qwen3:8b did not download. Falling back to llama3.2."
+          curl --fail --show-error --retry 3 -N http://ollama:11434/api/pull -d '{"name":"llama3.2"}'
+        fi
+
+  speaches:
+    image: ghcr.io/speaches-ai/speaches:latest-cpu
+    ports:
+      - "127.0.0.1:8969:8000"
+    volumes:
+      - hf_cache:/home/ubuntu/.cache/huggingface/hub
+    restart: unless-stopped
+
+  speaches-init:
+    image: ghcr.io/speaches-ai/speaches:latest-cpu
+    depends_on:
+      - speaches
+    volumes:
+      - hf_cache:/home/ubuntu/.cache/huggingface/hub
+    environment:
+      SPEACHES_BASE_URL: http://speaches:8000
+    entrypoint: ["sh", "-c"]
+    command:
+      - |
+        set -eu
+        echo "Waiting for Speaches, then downloading Kokoro."
+        python3 - <<'PY'
+        import time, urllib.request
+        for _ in range(60):
+            try:
+                urllib.request.urlopen("http://speaches:8000/v1/models", timeout=2)
+                break
+            except Exception:
+                time.sleep(2)
+        else:
+            raise SystemExit("Speaches did not become ready.")
+        PY
+        uv tool run speaches-cli model download speaches-ai/Kokoro-82M-v1.0-ONNX
+    restart: "no"
+
+  dia:
+    build:
+      context: .
+      dockerfile: services/dia/Dockerfile
+    ports:
+      - "127.0.0.1:8871:8871"
+    environment:
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      DIA_MODEL: nari-labs/Dia-1.6B-0626
+    volumes:
+      - dia_models:/models
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    ports:
+      - "127.0.0.1:8742:8742"
+    environment:
+      INBOX_BRIEF_DATA_DIR: /data
+      INBOX_BRIEF_FIXTURES_DIR: /app/fixtures
+      INBOX_BRIEF_DEMO_DIR: /app/demo
+      INBOX_BRIEF_OLLAMA_URL: http://ollama:11434
+      INBOX_BRIEF_DIA_URL: http://dia:8871
+      INBOX_BRIEF_SPEACHES_URL: http://speaches:8000
+      INBOX_BRIEF_WEB_URL: http://127.0.0.1:43123
+      INBOX_BRIEF_GOOGLE_CLIENT_ID: ${INBOX_BRIEF_GOOGLE_CLIENT_ID:-}
+      INBOX_BRIEF_GOOGLE_CLIENT_SECRET: ${INBOX_BRIEF_GOOGLE_CLIENT_SECRET:-}
+      INBOX_BRIEF_GOOGLE_REDIRECT_URI: ${INBOX_BRIEF_GOOGLE_REDIRECT_URI:-http://127.0.0.1:8742/api/connect/gmail/callback}
+      INBOX_BRIEF_MICROSOFT_CLIENT_ID: ${INBOX_BRIEF_MICROSOFT_CLIENT_ID:-}
+      INBOX_BRIEF_MICROSOFT_CLIENT_SECRET: ${INBOX_BRIEF_MICROSOFT_CLIENT_SECRET:-}
+      INBOX_BRIEF_MICROSOFT_TENANT: ${INBOX_BRIEF_MICROSOFT_TENANT:-common}
+      INBOX_BRIEF_MICROSOFT_REDIRECT_URI: ${INBOX_BRIEF_MICROSOFT_REDIRECT_URI:-http://127.0.0.1:8742/api/connect/outlook/callback}
+    volumes:
+      - brief_data:/data
+    depends_on:
+      - ollama
+      - speaches
+      - dia
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+      args:
+        API_INTERNAL_URL: http://api:8742
+    ports:
+      - "43123:43123"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  ollama_models:
+  hf_cache:
+  dia_models:
+  brief_data:

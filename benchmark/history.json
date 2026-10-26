@@ -1,0 +1,99 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "at": "2026-10-18T19:17:10+00:00",
+      "total": 107,
+      "scores": {
+        "Connectivity and MCP robustness": 8,
+        "Thread consolidation": 10,
+        "Noise filtering": 10,
+        "Suggestions and the ask box": 10,
+        "Script faithfulness": 10,
+        "Neutrality": 10,
+        "Audio naturalness and emotion": 7,
+        "UX simplicity": 10,
+        "Day, library, and re-surface": 10,
+        "Privacy and security": 10,
+        "Reliability": 8,
+        "Docs and onboarding": 4
+      }
+    },
+    {
+      "iteration": 2,
+      "at": "2026-10-18T19:18:35+00:00",
+      "total": 115,
+      "scores": {
+        "Connectivity and MCP robustness": 8,
+        "Thread consolidation": 10,
+        "Noise filtering": 10,
+        "Suggestions and the ask box": 10,
+        "Script faithfulness": 10,
+        "Neutrality": 10,
+        "Audio naturalness and emotion": 7,
+        "UX simplicity": 10,
+        "Day, library, and re-surface": 10,
+        "Privacy and security": 10,
+        "Reliability": 10,
+        "Docs and onboarding": 10
+      }
+    },
+    {
+      "iteration": 3,
+      "at": "2026-10-18T19:39:30+00:00",
+      "total": 115,
+      "scores": {
+        "Connectivity and MCP robustness": 8,
+        "Thread consolidation": 10,
+        "Noise filtering": 10,
+        "Suggestions and the ask box": 10,
+        "Script faithfulness": 10,
+        "Neutrality": 10,
+        "Audio naturalness and emotion": 7,
+        "UX simplicity": 10,
+        "Day, library, and re-surface": 10,
+        "Privacy and security": 10,
+        "Reliability": 10,
+        "Docs and onboarding": 10
+      }
+    },
+    {
+      "iteration": 4,
+      "at": "2026-10-18T19:52:06+00:00",
+      "total": 115,
+      "scores": {
+        "Connectivity and MCP robustness": 8,
+        "Thread consolidation": 10,
+        "Noise filtering": 10,
+        "Suggestions and the ask box": 10,
+        "Script faithfulness": 10,
+        "Neutrality": 10,
+        "Audio naturalness and emotion": 7,
+        "UX simplicity": 10,
+        "Day, library, and re-surface": 10,
+        "Privacy and security": 10,
+        "Reliability": 10,
+        "Docs and onboarding": 10
+      }
+    },
+    {
+      "iteration": 5,
+      "at": "2026-10-18T19:58:23+00:00",
+      "total": 115,
+      "scores": {
+        "Connectivity and MCP robustness": 8,
+        "Thread consolidation": 10,
+        "Noise filtering": 10,
+        "Suggestions and the ask box": 10,
+        "Script faithfulness": 10,
+        "Neutrality": 10,
+        "Audio naturalness and emotion": 7,
+        "UX simplicity": 10,
+        "Day, library, and re-surface": 10,
+        "Privacy and security": 10,
+        "Reliability": 10,
+        "Docs and onboarding": 10
+      }
+    }
+  ]
+}

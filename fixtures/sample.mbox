@@ -1,0 +1,113 @@
+From MAILER-DAEMON Sun Oct 18 12:40:49 2026
+From: Sarah Chen <sarah.chen@northline.example>
+To: Launch List <launch@northline.example>
+Subject: Thursday ship date
+Date: Thu, 16 Oct 2026 08:14:00 +0000
+Message-ID: <launch-1@northline.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+Hi all,
+
+Can we move the ship date to Thursday 22 October? The vendor confirmed the crates arrive Wednesday.
+
+Thanks,
+Sarah Chen
+Product Operations
+
+From MAILER-DAEMON Sun Oct 18 12:40:49 2026
+From: Tom Adler <tom.adler@northline.example>
+To: Sarah Chen <sarah.chen@northline.example>
+Cc: Launch List <launch@northline.example>
+Subject: Re: Thursday ship date
+Date: Thu, 16 Oct 2026 08:41:00 +0000
+Message-ID: <launch-2@northline.example>
+In-Reply-To: <launch-1@northline.example>
+References: <launch-1@northline.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+Wednesday still works for the design review if we ship on Thursday.
+
+The loading dock is booked from 7am.
+
+On Thu, 16 Oct 2026 at 08:14, Sarah Chen wrote:
+> Can we move the ship date to Thursday 22 October? The vendor confirmed the crates arrive Wednesday.
+>
+> Thanks,
+> Sarah Chen
+
+-- 
+Tom Adler
+Northline Supply
+Sent from my iPhone
+
+From MAILER-DAEMON Sun Oct 18 12:40:49 2026
+From: Priya Shah <priya.shah@northline.example>
+To: Brand <brand@northline.example>
+Subject: Homepage hero
+Date: Thu, 16 Oct 2026 09:05:00 +0000
+Message-ID: <design-1@northline.example>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="brief-boundary"
+
+--brief-boundary
+Content-Type: text/plain; charset="utf-8"
+
+Please hold the homepage hero until Luis sends the revised stills. He said they will be ready Monday.
+
+Priya Shah
+Brand
+
+This email and any attachments are confidential and intended only for the recipient. If you received it in error, delete it.
+
+--brief-boundary
+Content-Type: text/html; charset="utf-8"
+
+<p>Please hold the homepage hero until Luis sends the revised stills. He said they will be ready Monday.</p>
+<p>This email and any attachments are confidential and intended only for the recipient.</p>
+
+--brief-boundary--
+
+From MAILER-DAEMON Sun Oct 18 12:40:49 2026
+From: Luis Ortega <luis.ortega@northline.example>
+To: Priya Shah <priya.shah@northline.example>
+Subject: Re: Homepage hero
+Date: Thu, 16 Oct 2026 09:22:00 +0000
+Message-ID: <design-2@northline.example>
+In-Reply-To: <design-1@northline.example>
+References: <design-1@northline.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+The revised stills will be ready Monday. I will send them to the brand folder before noon.
+
+Luis Ortega
+
+From MAILER-DAEMON Sun Oct 18 12:40:49 2026
+From: Product Weekly <newsletter@digest.example>
+To: Sarah Chen <sarah.chen@northline.example>
+Subject: This week in widgets
+Date: Thu, 16 Oct 2026 07:02:00 +0000
+Message-ID: <news-1@digest.example>
+List-Unsubscribe: <mailto:unsubscribe@digest.example>
+Precedence: bulk
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+This week in product: ten ways to crush your roadmap.
+
+Unsubscribe at the link below.
+
+From MAILER-DAEMON Sun Oct 18 12:40:49 2026
+From: Calendar <no-reply@calendar.example>
+To: Sarah Chen <sarah.chen@northline.example>
+Subject: Reminder: standup
+Date: Thu, 16 Oct 2026 06:30:00 +0000
+Message-ID: <cal-1@calendar.example>
+Auto-Submitted: auto-generated
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+Reminder: standup at 9:30 in the north room.
+

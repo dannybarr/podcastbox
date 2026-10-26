@@ -1,0 +1,7 @@
+{
+  "name": "inbox-brief",
+  "private": true,
+  "scripts": {
+    "benchmark": "python3 benchmark/run.py"
+  }
+}

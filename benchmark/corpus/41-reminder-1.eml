@@ -1,0 +1,9 @@
+From: Tasks <reminder@tasks.bench.example>
+To: <ada.north@bench.example>
+Subject: Reminder: timesheet
+Date: Fri, 16 Oct 2026 18:00:00 +0000
+Message-ID: <reminder-1@bench.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+Please send the timesheet.

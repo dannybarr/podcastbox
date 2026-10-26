@@ -1,0 +1,21 @@
+# Use with the base file on a machine that has an NVIDIA GPU and the
+# NVIDIA container toolkit:
+#
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml up
+#
+# Dia then loads in float16 and reports device=cuda. Automatic voice mode
+# selects it. Leave this file out and the same stack uses the CPU image,
+# which still runs, slowly. Kokoro remains the fast CPU voice.
+
+services:
+  dia:
+    build:
+      context: .
+      dockerfile: services/dia/Dockerfile.gpu
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

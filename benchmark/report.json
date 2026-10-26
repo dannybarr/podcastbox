@@ -1,0 +1,176 @@
+{
+  "iteration": 5,
+  "at": "2026-10-18T19:58:23+00:00",
+  "total": 115,
+  "metrics": [
+    {
+      "name": "Connectivity and MCP robustness",
+      "score": 8,
+      "evidence": "test_gmail_oauth_refresh_pagination_thread_and_backoff: pass (mocked Gmail, Graph, or MCP responses).\ntest_outlook_oauth_refresh_pagination_thread_and_backoff: pass (mocked Gmail, Graph, or MCP responses).\ntest_mcp_gmail_streamable_http_and_stdio: pass (mocked Gmail, Graph, or MCP responses).\ntest_mcp_outlook_streamable_http_pages: pass (mocked Gmail, Graph, or MCP responses).\nscripts/verify-connections exited 2. The last 2 points need a live Gmail or Outlook account on this machine. Exit 2 means nothing was configured. Exit 1 means a configured account failed.\nPodcastBox connection check\nLive services only. A skip is not a pass.\n\nGmail: SKIP\n  auth: SKIP  Set INBOX_BRIEF_GOOGLE_CLIENT_ID and INBOX_BRIEF_GOOGLE_CLIENT_SECRET.\n  list: SKIP  No credentials.\n  fetch thread: SKIP  No credentials.\n  disconnect: SKIP  Nothing was stored.\n\nOutlook: SKIP\n  auth: SKIP  Set INBOX_BRIEF_MICROSOFT_CLIENT_ID and INBOX_BRIEF_MICROSOFT_CLIENT_SECRET.\n  list: SKIP  No credentials.\n  fetch thread: SKIP  No credentials.\n  disconnect: SKIP  Nothing was stored.\n\nMCP: SKIP\n  auth: SKIP  No MCP server is saved in Settings.\n  list: SKIP  Add an http URL or a stdio: command.\n  fetch thread: SKIP  No server.\n  disconnect: SKIP  MCP servers keep their own login.\n\nResult: SKIP  No live mailbox could be checked.",
+      "ceiling": "8/10 until scripts/verify-connections exits 0 against a real mailbox: set the Google or Microsoft client id and secret, connect the account, and run the script. A mock cannot award these 2 points."
+    },
+    {
+      "name": "Thread consolidation",
+      "score": 10,
+      "evidence": "45 labelled messages, 37 non-noise. Pairwise precision 1.000 (83/83), recall 1.000 (83/83). Missed pairs sample: none. Extra pairs sample: none.",
+      "ceiling": ""
+    },
+    {
+      "name": "Noise filtering",
+      "score": 10,
+      "evidence": "Precision 1.000, recall 1.000. False noise: none. Missed noise: none. Unparsed: none. Kept sample size 37.",
+      "ceiling": ""
+    },
+    {
+      "name": "Suggestions and the ask box",
+      "score": 10,
+      "evidence": "8/8 queries.\n'update on Northquay': pass got ['northquay'] expected ['northquay']\n'update on Birchkiln': pass got ['birchkiln'] expected ['birchkiln']\n'my communications with Farah Colour': pass got ['colourpass'] expected ['colourpass']\n'handheld radio channel': pass got ['radio'] expected ['radio']\n'zebra docking fee': pass got ['zebra'] expected ['zebra']\n'nylon badge reels': pass got ['lanyard'] expected ['lanyard']\n'pension form PF-204': pass got ['payroll'] expected ['payroll']\n'fender inspection bollard': pass got ['dock'] expected ['dock']",
+      "ceiling": ""
+    },
+    {
+      "name": "Script faithfulness",
+      "score": 10,
+      "evidence": "Extractive Northquay podcast 4aacaa71ebe7: 4 segments, each with a source id, guard notes empty. Speech was a test tone.\nExtractive generation made no HTTP call.\nEvery number and capitalised token in the spoken lines appears in the cited source.\nPlanted line 'This is a good idea' was removed. A sourced Northquay sentence stayed.",
+      "ceiling": ""
+    },
+    {
+      "name": "Neutrality",
+      "score": 10,
+      "evidence": "Spoken Northquay podcast contains none of: i think, you should, we should, probably, good idea.\nThe guard kept 'good' when the cited source says good, and dropped it when the source does not.",
+      "ceiling": ""
+    },
+    {
+      "name": "Audio naturalness and emotion",
+      "score": 7,
+      "evidence": "kokoro-british.mp3 is 216021 bytes and starts with b'ID3'.\nTranscript has S1 and S2.\n4 timing ranges, monotonic, one per segment.\nDefault voice preset is kokoro_british with bf_emma and bm_george.\nPreview files exist for Kokoro British, Kokoro American, and Dia.\nsave_clip without consent raises VoiceClipError.\nBritish clip is 29.63s. Transcript ends at 30.79s. Within 2 seconds.\nbenchmark/listening.json is absent. The benchmark does not invent a listener.",
+      "ceiling": "7/10 until a person listens to demo/kokoro-british.mp3 against demo/transcript-british.json and writes benchmark/listening.json with their name, naturalness 10, and emotion 10. The automated proxy cannot award the last 3 points."
+    },
+    {
+      "name": "UX simplicity",
+      "score": 10,
+      "evidence": "Two screens: Home and Settings. Redirects: ['web/src/app/sources/page.tsx', 'web/src/app/history/page.tsx', 'web/src/app/sources/[id]/page.tsx', 'web/src/app/editions/[id]/page.tsx'].\nBrowser: one click on Turn into podcast opened a dialog that contains Make the podcast.\nLighthouse (production build on port 43191): accessibility 100, performance 100.",
+      "ceiling": ""
+    },
+    {
+      "name": "Day, library, and re-surface",
+      "score": 10,
+      "evidence": "server/tests/test_days.py: 12/12 passed, exit 0.\nOverview checks in this file: test_overview_orders_significant_chains_first, test_overview_covers_each_chain_once, test_overview_skips_noise, test_overview_refresh_reads_only_what_is_new, test_overview_full_keeps_every_sentence_and_quick_is_the_shorter_choice.\n          [100%]\n=============================== warnings summary ===============================\ntests/test_days.py::test_api_keeps_today_on_home_and_older_days_in_the_library\n  /tmp/pydeps/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n12 passed, 1 warning in 1.87s",
+      "ceiling": ""
+    },
+    {
+      "name": "Privacy and security",
+      "score": 10,
+      "evidence": "API key is ciphertext in the secrets table. The settings JSON does not contain the key, and the ciphertext is not the key.\nGmail and Outlook tokens are in the secrets table, not the settings JSON.\nVoice clip stored at /tmp/inbox-brief-bench-jpg5oz3m/voice/mine.wav, under the data directory.\nSecret scan of server/inbox_brief, web/src, fixtures, and benchmark/corpus found no live key patterns.\nassert_private_base_url rejects https://api.openai.com. ai.chat returns nothing when no API key is saved.",
+      "ceiling": ""
+    },
+    {
+      "name": "Reliability",
+      "score": 10,
+      "evidence": "python3 -m pytest -q server/tests exited 0.\nummary ===============================\n../tmp/pydeps/fastapi/testclient.py:1\n  /tmp/pydeps/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n54 passed, 1 warning in 3.79s\nThe suite covers an unknown chain (404), Gmail without credentials (400), and an empty extractive brief.\nExtractive generation made no network call. The contract suite mocks HTTP and passed inside the full pytest run.\nA failed podcast job stores a non-empty error string.",
+      "ceiling": ""
+    },
+    {
+      "name": "Docs and onboarding",
+      "score": 10,
+      "evidence": "yes  docker compose up or uvicorn\nyes  INBOX_BRIEF_GOOGLE_CLIENT_ID\nyes  Mail.Read and offline_access\nyes  @gongrzhe/server-gmail-autoauth-mcp\nyes  @softeria/ms-365-mcp-server\nyes  stdio: and streamable HTTP\nyes  scripts/verify-connections\nyes  make benchmark\nyes  cloud model only with a saved key\nyes  Europe/London",
+      "ceiling": ""
+    }
+  ],
+  "history": [
+    {
+      "iteration": 1,
+      "at": "2026-10-18T19:17:10+00:00",
+      "total": 107,
+      "scores": {
+        "Connectivity and MCP robustness": 8,
+        "Thread consolidation": 10,
+        "Noise filtering": 10,
+        "Suggestions and the ask box": 10,
+        "Script faithfulness": 10,
+        "Neutrality": 10,
+        "Audio naturalness and emotion": 7,
+        "UX simplicity": 10,
+        "Day, library, and re-surface": 10,
+        "Privacy and security": 10,
+        "Reliability": 8,
+        "Docs and onboarding": 4
+      }
+    },
+    {
+      "iteration": 2,
+      "at": "2026-10-18T19:18:35+00:00",
+      "total": 115,
+      "scores": {
+        "Connectivity and MCP robustness": 8,
+        "Thread consolidation": 10,
+        "Noise filtering": 10,
+        "Suggestions and the ask box": 10,
+        "Script faithfulness": 10,
+        "Neutrality": 10,
+        "Audio naturalness and emotion": 7,
+        "UX simplicity": 10,
+        "Day, library, and re-surface": 10,
+        "Privacy and security": 10,
+        "Reliability": 10,
+        "Docs and onboarding": 10
+      }
+    },
+    {
+      "iteration": 3,
+      "at": "2026-10-18T19:39:30+00:00",
+      "total": 115,
+      "scores": {
+        "Connectivity and MCP robustness": 8,
+        "Thread consolidation": 10,
+        "Noise filtering": 10,
+        "Suggestions and the ask box": 10,
+        "Script faithfulness": 10,
+        "Neutrality": 10,
+        "Audio naturalness and emotion": 7,
+        "UX simplicity": 10,
+        "Day, library, and re-surface": 10,
+        "Privacy and security": 10,
+        "Reliability": 10,
+        "Docs and onboarding": 10
+      }
+    },
+    {
+      "iteration": 4,
+      "at": "2026-10-18T19:52:06+00:00",
+      "total": 115,
+      "scores": {
+        "Connectivity and MCP robustness": 8,
+        "Thread consolidation": 10,
+        "Noise filtering": 10,
+        "Suggestions and the ask box": 10,
+        "Script faithfulness": 10,
+        "Neutrality": 10,
+        "Audio naturalness and emotion": 7,
+        "UX simplicity": 10,
+        "Day, library, and re-surface": 10,
+        "Privacy and security": 10,
+        "Reliability": 10,
+        "Docs and onboarding": 10
+      }
+    },
+    {
+      "iteration": 5,
+      "at": "2026-10-18T19:58:23+00:00",
+      "total": 115,
+      "scores": {
+        "Connectivity and MCP robustness": 8,
+        "Thread consolidation": 10,
+        "Noise filtering": 10,
+        "Suggestions and the ask box": 10,
+        "Script faithfulness": 10,
+        "Neutrality": 10,
+        "Audio naturalness and emotion": 7,
+        "UX simplicity": 10,
+        "Day, library, and re-surface": 10,
+        "Privacy and security": 10,
+        "Reliability": 10,
+        "Docs and onboarding": 10
+      }
+    }
+  ]
+}

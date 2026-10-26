@@ -1,0 +1,25 @@
+From: Priya Shah <priya.shah@northline.example>
+To: Brand <brand@northline.example>
+Subject: Homepage hero
+Date: Thu, 16 Oct 2026 09:05:00 +0000
+Message-ID: <design-1@northline.example>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="brief-boundary"
+
+--brief-boundary
+Content-Type: text/plain; charset="utf-8"
+
+Please hold the homepage hero until Luis sends the revised stills. He said they will be ready Monday.
+
+Priya Shah
+Brand
+
+This email and any attachments are confidential and intended only for the recipient. If you received it in error, delete it.
+
+--brief-boundary
+Content-Type: text/html; charset="utf-8"
+
+<p>Please hold the homepage hero until Luis sends the revised stills. He said they will be ready Monday.</p>
+<p>This email and any attachments are confidential and intended only for the recipient.</p>
+
+--brief-boundary--

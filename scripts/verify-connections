@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+"""Run a live Gmail, Outlook, and MCP connection check.
+
+Exit 0 when a live check passed, 2 when there was nothing to check, 1 on failure.
+"""
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "server"))
+
+from inbox_brief.tools.verify_connections import main  # noqa: E402
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

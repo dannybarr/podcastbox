@@ -1,0 +1,7 @@
+fastapi>=0.115
+uvicorn[standard]>=0.32
+pydantic>=2.9
+soundfile>=0.12
+numpy>=1.26
+huggingface_hub>=0.26
+# dia is installed from git in the Dockerfile so the Apache-2.0 revision is pinned.

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" role="img" aria-label="DB Labs">
+  <style>
+    .ink { font: 900 92px Inter, sans-serif; letter-spacing: -3px; }
+  </style>
+  <text class="ink" x="0" y="96" fill="#0F0C08">DB</text>
+  <text class="ink" x="148" y="96" fill="#2B3FD6">L</text>
+  <g transform="translate(214 8)" color="#0F0C08">
+    <path d="M28 4 H48 M32 8 V32 L62 82 Q67 92 56 96 H20 Q9 92 14 82 L44 32 V8" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M24 64 H52 L60 80 Q63 88 56 91 H20 Q13 88 16 80 Z" fill="#BFD62F"/>
+  </g>
+  <text class="ink" x="292" y="96" fill="#2B3FD6">BS</text>
+</svg>

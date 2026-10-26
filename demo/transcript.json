@@ -1,0 +1,76 @@
+{
+  "title": "Brief for 16 October",
+  "brief_date": "2026-10-16",
+  "engine": "kokoro",
+  "engine_detail": "kokoro-onnx af_bella + am_michael",
+  "script_model": "extractive",
+  "audio_file": "kokoro-ab.mp3",
+  "notes": [],
+  "dia_prompt": "[S1] Sarah Chen wrote: Can we move the ship date to Thursday 22 October? The vendor confirmed the crates arrive Wednesday. [S2] (chuckle) Tom Adler replied: Wednesday still works for the design review if we ship on Thursday. The loading dock is booked from 7am. [S1] Priya Shah wrote: Please hold the homepage hero until Luis sends the revised stills. He said they will be ready Monday. [S2] Luis Ortega replied: The revised stills will be ready Monday. I will send them to the brand folder before noon. [S1]",
+  "segments": [
+    {
+      "speaker": "S1",
+      "speaker_name": "Mina",
+      "text": "Sarah Chen wrote: Can we move the ship date to Thursday 22 October? The vendor confirmed the crates arrive Wednesday.",
+      "delivery": "curious",
+      "nonverbal": null,
+      "exaggeration": 0.4,
+      "source_ids": [
+        "2b4a9de4f02f5464"
+      ],
+      "source_message_ids": [
+        "launch-1@northline.example"
+      ],
+      "start_ms": 0,
+      "end_ms": 7466
+    },
+    {
+      "speaker": "S2",
+      "speaker_name": "Owen",
+      "text": "Tom Adler replied: Wednesday still works for the design review if we ship on Thursday. The loading dock is booked from 7am.",
+      "delivery": "emphasis",
+      "nonverbal": "chuckle",
+      "exaggeration": 0.45,
+      "source_ids": [
+        "f4650dcf1184fb6c"
+      ],
+      "source_message_ids": [
+        "launch-2@northline.example"
+      ],
+      "start_ms": 7646,
+      "end_ms": 16734
+    },
+    {
+      "speaker": "S1",
+      "speaker_name": "Mina",
+      "text": "Priya Shah wrote: Please hold the homepage hero until Luis sends the revised stills. He said they will be ready Monday.",
+      "delivery": "steady",
+      "nonverbal": null,
+      "exaggeration": 0.28,
+      "source_ids": [
+        "70d512d42435f125"
+      ],
+      "source_message_ids": [
+        "design-1@northline.example"
+      ],
+      "start_ms": 16914,
+      "end_ms": 24359
+    },
+    {
+      "speaker": "S2",
+      "speaker_name": "Owen",
+      "text": "Luis Ortega replied: The revised stills will be ready Monday. I will send them to the brand folder before noon.",
+      "delivery": "steady",
+      "nonverbal": null,
+      "exaggeration": 0.28,
+      "source_ids": [
+        "1aa7985ad1e56449"
+      ],
+      "source_message_ids": [
+        "design-2@northline.example"
+      ],
+      "start_ms": 24539,
+      "end_ms": 32240
+    }
+  ]
+}
